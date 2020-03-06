@@ -1,6 +1,7 @@
 with (import <nixpkgs> {});
 
 #build the supply locally, so it can find libfoo.
+#Otherwise, the libfoo is not found for buildInputs.
 let
   library =
    stdenv.mkDerivation rec {
@@ -26,7 +27,7 @@ let
 
 in
 stdenv.mkDerivation {
-  name = "bar-0.1";
+  name = "bar-0.2";
   src = ./.;
   
   buildInputs = [ library ];

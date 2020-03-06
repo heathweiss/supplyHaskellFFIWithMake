@@ -8,14 +8,13 @@ I differ from the turorial in that:
 -I use: with import <nixpkgs> {}; instead of { stdenv }:
 -I use: $ nix-build
  -instead of nix-build '<nixpkgs>' -A libfoo
-produces: 
-/nix/store/2vbqsw71cvji7m4d65w3rqwvcxrnhkj3-libfoo-0.1
-with subdirectories include/foo.h and lib/libfoo.a
 
-At this point:
-$ nix-env -q
--does not show a libfoo-0.1
-
-so I deviated from his tutorial with
+Installing it with 
 $ install: nix-env -i -f default.nix
--now $ nix-env -q shows libfoo-0.1
+does not allow it to be found in the consume pkg.
+Instead I need to build it at the same time. See ../consume<1,2>
+
+mkDerivation:
+Uses MakeFile
+Copies the libfoo.a to $out/lib folder
+Copies the foo.h to the $out/include folder.

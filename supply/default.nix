@@ -1,7 +1,7 @@
 with import <nixpkgs> {};
  
 stdenv.mkDerivation rec {
-  name = "libfoo-0.1";
+  name = "libfoo-0.2";
   
   src = ./.;
 
