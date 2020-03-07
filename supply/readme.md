@@ -11,8 +11,8 @@ I differ from the turorial in that:
 
 Installing it with 
 $ install: nix-env -i -f default.nix
-does not allow it to be found in the consume pkg.
-Instead I need to build it at the same time. See ../consume<1,2>
+does not allow it to be found in the c exe project that uses the library.
+Instead I need to build it at the same time in the .nix file, so the consuming exe can reference it via a variable. See ../consume<1,2>
 
 mkDerivation:
 Uses MakeFile
